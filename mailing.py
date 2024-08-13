@@ -1,2 +1,30 @@
-def send_email():
-    print("Mail was sent")
+import smtplib
+import imghdr
+from email.message import EmailMessage
+
+PASSWORD = "wiwt ubvh eiyr pllj"
+SENDER = "vigneshbaskar2024@gmail.com"
+RECEIVER = "vigneshbaskar2024@gmail.com"
+
+def send_email(image_path):
+    print("process started")
+    message = EmailMessage()
+    message['Subject'] = "New person has been showed up!"
+    message['From'] = SENDER
+    message['To'] = RECEIVER
+    message.set_content("Hey, we just saw a new person!!!!!!")
+
+    with open(image_path, "rb") as file:
+        content = file.read()
+    message.add_attachment(content, maintype="image", subtype=imghdr.what(None, content))
+
+    gmail = smtplib.SMTP("smtp.gmail.com", 587)
+    gmail.ehlo()
+    gmail.starttls()
+    gmail.login(SENDER, PASSWORD)
+    gmail.send_message(message)
+    gmail.quit()
+    print("ended")
+
+if __name__ == "__main__":
+    send_email(image_path="images/192.png")
