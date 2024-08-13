@@ -1,6 +1,7 @@
 import smtplib
 import imghdr
 from email.message import EmailMessage
+import os
 
 PASSWORD = os.getenv("PASSWORD")  #PLease provide your own gmail id password by activating two step verification and add app password there to generate one.
 SENDER = "vigneshbaskar2024@gmail.com"
