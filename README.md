@@ -31,10 +31,6 @@ This project is a Python-based motion detection system that uses a webcam to cap
     python motion_detector.py
     ```
 
-## Usage
-
-To start the motion detection system, run the following command:
-```bash
 python motion_detector.py
 The system will start monitoring using your webcam. If motion is detected, an image will be saved and an email alert will be sent.
 
@@ -75,3 +71,7 @@ OpenCV
 For questions or suggestions, you can reach me at vigneshbaskar1407@gmail.com.
 
 
+## Usage
+
+To start the motion detection system, run the following command:
+```bash
