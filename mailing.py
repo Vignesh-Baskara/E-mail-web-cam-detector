@@ -14,7 +14,7 @@ def send_email(image_path):
     message['To'] = RECEIVER
     message.set_content("Hey, we just saw a new person!!!!!!")
 
-    with open(image_path, "rb") as file:
+    with open(image_path, "rb") as file: #Context mangers
         content = file.read()
     message.add_attachment(content, maintype="image", subtype=imghdr.what(None, content))
 
